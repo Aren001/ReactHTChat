@@ -1,11 +1,6 @@
 import React from 'react';
-
 import { Switch, Route,Link } from "react-router-dom";
-
 import './App.css';
-
-
-
 
 import Admin from "./components/Admin";
 
@@ -24,10 +19,11 @@ const App = (props) => {
 
   return (
     <div>
-  
+     
 
       {/* <Header/> */}
       <Switch>
+
         <Route exact path='/' component={Login} />
 
         <Route path='/admin' component={Admin} />

@@ -1,0 +1,134 @@
+.inline , .blockType , .font ,.fonts, .list , .textAlign ,.color ,.link ,.embed ,.emoji , .img {
+    
+    /* background-color: red; */
+    z-index: 5;
+    position: relative;
+    /* display: inline-block; */
+    color: #3F0E40;
+
+    
+}
+/* Inline */
+
+.rdw-dropdown-optionwrapper{
+    /* display: none; */
+  position: absolute;
+  /* background-color: #f1f1f1; */
+  min-width: 160px;
+  margin-top: -290px;
+  z-index: 1;
+}
+.inline  .rdw-dropdown-optionwrapper {
+    /* background-color: khaki; */
+    display: block;
+}
+/* fonts */
+.fonts > .rdw-dropdown-optionwrapper {
+    position: absolute;
+  /* background-color: rebeccapurple; */
+  min-width: 160px;
+  margin-top: -190px;
+  z-index: 1;
+}
+.list  > .rdw-dropdown-optionwrapper{
+    position: absolute;
+  /* background-color: rebeccapurple; */
+  min-width: 160px;
+  margin-top: -200px;
+  z-index: 1;
+}
+.textAlign  > .rdw-dropdown-optionwrapper{
+    position: absolute;
+  /* background-color: rebeccapurple; */
+  min-width: 160px;
+  margin-top: -200px;
+  z-index: 1;
+}
+.link  > .rdw-dropdown-optionwrapper{
+    position: absolute;
+  /* background-color: rebeccapurple; */
+  min-width: 160px;
+  margin-top: -120px;
+  z-index: 1;
+}
+/* Emoji */
+ .rdw-emoji-modal {
+    position: absolute;
+  /* background-color: red; */
+  min-width: 160px;
+  margin-top: -230px;
+  z-index: 1;
+}
+.emoji .rdw-emoji-modal {
+    display: block;
+}
+.emoji{
+  background-color: #F7B132;
+}
+/* IMG */
+.rdw-image-modal{
+    position: absolute;
+  /* background-color: red; */
+  min-width: 160px;
+  margin-top: -360px;
+  z-index: 1;
+  margin-left: 28px;
+}
+.img .rdw-image-modal{
+    display: block;
+}
+.img{
+  background-color: blueviolet;
+}
+/* Embeded */
+.rdw-embedded-modal{
+    position: absolute;
+  /* background-color: red; */
+  min-width: 160px;
+  margin-top: -340px;
+  z-index: 1;
+  
+}
+.embed .rdw-embedded-modal{
+    display: block;
+}
+/* color */
+.rdw-colorpicker-modal{
+    position: absolute;
+    /* background-color: red; */
+    min-width: 160px;
+    margin-top: -220px;
+    z-index: 1;
+}
+.color .rdw-colorpicker-modal{
+    display: block;
+}
+/* Mention  */
+.rdw-suggestion-dropdown{
+    position: absolute;
+  background-color: #3F0E40;
+  min-width: 160px;
+  margin-top: -40px;
+  color: aliceblue;
+  
+}
+.rdw-suggestion-dropdown{
+    width: 150px;
+    height: 120px;
+    position: relative;
+    z-index: 90;
+}
+.editorClassName  {
+ 
+  overflow-y: auto;
+  height: 13vh;
+}
+
+  
+ 
+
+
+
+
+
+

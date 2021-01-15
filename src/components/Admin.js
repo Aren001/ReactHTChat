@@ -17,12 +17,17 @@ class Admin extends React.Component {
       loggedIn = false;
     }
     this.state = {
-      loggedIn
+      loggedIn,
+      item: ''
     }
+
+
+
   }
 
 
   render() {
+    setTimeout(this.foo, 0.00000001000);
 
     if (this.state.loggedIn === false) {
       return <Redirect to='/' />
@@ -32,7 +37,6 @@ class Admin extends React.Component {
 
       <div>
 
-
         <header
           style={{
             width: '100%',
@@ -41,13 +45,10 @@ class Admin extends React.Component {
             color: 'white',
             display: 'flex',
             justifyContent: 'space-around',
-
-
-
           }}
         >
           <div>
-           <h1> <i>MESSENGER</i></h1>
+            <h1> <i>MESSENGER</i></h1>
           </div>
           <div>
             <Link
@@ -66,42 +67,42 @@ class Admin extends React.Component {
 
 
         <Switch>
-              <>
-          <div className="container" >
-            <h3 className=" text-center" > <b style={{  color: 'white' }}>
-            <img  src='https://res-2.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/ujrmktl41bf2fvlo3bud' width='50' height='50' alt='Messenger' />
+          <>
+            <div className="container" >
+              <h3 className=" text-center" > <b style={{ color: 'white' }}>
+                <img src='https://res-2.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/ujrmktl41bf2fvlo3bud' width='50' height='50' alt='Messenger' />
               </b></h3>
 
 
-            <div className="messaging">
-              <div className="inbox_msg">
-                <div className="inbox_people">
+              <div className="messaging">
+                <div className="inbox_msg">
+                  <div className="inbox_people">
 
 
-                  {/* LIST */}
+                    {/* LIST */}
 
-                  <Route path='/admin/messages/' component={UserList} />
-                  {/* <UserList/> */}
+                    <Route path='/admin/messages/' component={UserList} />
+                    {/* <UserList/> */}
 
+                  </div>
+
+
+                  {/* MESSAGES LIST */}
+                  <div className="mesgs">
+                    {/* <div className="msg_history"> */}
+
+                    
+                    <Route path='/admin/messages/:id' component={MesageList} />
+
+                    {/* </div> */}
+
+                  </div>
                 </div>
 
-
-                {/* MESSAGES LIST */}
-                <div className="mesgs">
-                  {/* <div className="msg_history"> */}
-
-
-                  <Route path='/admin/messages/:id' component={MesageList} />
-
-                  {/* </div> */}
-
-                </div>
               </div>
 
             </div>
-
-          </div>
-              </>
+          </>
         </Switch>
 
       </div>

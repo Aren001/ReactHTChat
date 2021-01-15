@@ -22,44 +22,52 @@ class Login extends React.Component {
         this.sendLoginRequest = this.sendLoginRequest.bind(this);
     }
 
+    
+
 
     sendLoginRequest() {
 
+        
+        
+        localStorage.setItem('id', this.state.formData.id);
+        console.log(localStorage.getItem('id'), 'USER ID'); 
         localStorage.setItem('email', this.state.formData.email);
         axios.post('http://127.0.0.1:8000/api/login', this.state.formData)
-            .then(resp => {
-                console.log(resp, 'login');
-                if (resp.data != 'Not Match') {
-                    this.setState({
-                        userObj: resp.data,
-                        formData: {
-                            email: localStorage.getItem('email'),
-                            password: this.state.formData.password,
+        .then(resp => {
+            // console.log(resp, 'login');
+            if (resp.data != 'Not Match') {
+                this.setState({
+                    userObj: resp.data,
+                    formData: {
+                        email: localStorage.getItem('email'),
+                        password: this.state.formData.password,
+                        
+                        
+                    },
+                    
+                    loggedIn: true
+                    
+                })
+                
+                
+            } else {
+                alert('Not Match'); this.setState({
+                    formData: {
+                        email: '',
+                        password: '',
+                        
+                    },
+                })
+            }
+           
 
-                        },
-
-                        loggedIn: true
-
-                    })
-                } else {
-                    alert('Not Match'); this.setState({
-                        formData: {
-                            email: '',
-                            password: '',
-
-                        },
-                    })
-                }
-
-
-            })
+        })
 
     }
 
 
     handleChange = (e) => {
         e.preventDefault();
-
     }
 
     render() {
@@ -67,9 +75,11 @@ class Login extends React.Component {
         if (this.state.loggedIn) {
             return <Redirect to='/admin/messages/' />
         }
+        
 
         return (
             <div id="login">
+               
 
                 <div className="container">
                     <div id="login-row" className="row justify-content-center align-items-center">
@@ -77,6 +87,23 @@ class Login extends React.Component {
                             <div id="login-box" className="col-md-12">
                                 <form id="login-form" className="form" onSubmit={this.handleChange}   >
                                     <h3 className="text-center text-info" >Login</h3>
+                                    <div className="form-group" style={{ marginTop: '50px' }}>
+                                        <label className="text-info">User-ID:</label><br />
+                                        <input
+                                            type="text"
+                                            name="id"
+                                            id="username"
+                                            required
+                                            className="form-control"
+                                            placeholder="User ID"
+                                            value={this.state.formData.id}
+                                            onChange={(e) => {
+                                                let { formData } = this.state;
+                                                formData.id = e.target.value
+                                                this.setState({ formData })
+                                            }}
+                                        />
+                                    </div>
                                     <div className="form-group" style={{ marginTop: '50px' }}>
                                         <label className="text-info">E-Mail:</label><br />
                                         <input

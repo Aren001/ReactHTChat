@@ -5,6 +5,9 @@ class LogOut extends React.Component{
     constructor(props){
         super(props);
         localStorage.removeItem('email');
+        localStorage.removeItem('id');
+        localStorage.removeItem('team_id');
+        localStorage.removeItem('firstname');
     }
 
 
